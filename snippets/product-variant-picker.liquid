@@ -1,0 +1,138 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+{%- unless product.has_only_default_variant -%}
+  <variant-selects
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign swatch_count = option.values | map: 'swatch' | compact | size
+        assign picker_type = block.settings.picker_type
+
+        if swatch_count > 0 and block.settings.swatch_shape != 'none'
+          if block.settings.picker_type == 'dropdown'
+            assign picker_type = 'swatch_dropdown'
+          else
+            assign picker_type = 'swatch'
+          endif
+        endif
+        assign option_name = option.name | handleize
+      -%}
+      
+      {% capture option_tooltip %}
+        {% if option_name == 'mieten-oder-kaufen' or option_name == 'kaufen-oder-mieten' %}
+          {% if is_b2b_customer == false %}              
+            {% if template.suffix == blank or template.suffix == 'b2b-b2c' %}
+            {% if block.settings.tooltip_text != blank and product.selected_or_first_available_variant.option1 contains 'Mieten' %}
+              <div class="tooltip_wrapper">
+                <span class="icon_wrap">
+                <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 1.77148C8.51953 1.77148 5.38281 3.61914 3.66406 6.58398C1.90234 9.5918 1.90234 13.2441 3.66406 16.209C5.38281 19.2168 8.51953 21.0215 12 21.0215C15.4375 21.0215 18.5742 19.2168 20.293 16.209C22.0547 13.2441 22.0547 9.5918 20.293 6.58398C18.5742 3.61914 15.4375 1.77148 12 1.77148ZM12 22.3965C8.04688 22.3965 4.4375 20.334 2.46094 16.8965C0.484375 13.502 0.484375 9.33398 2.46094 5.89648C4.4375 2.50195 8.04688 0.396484 12 0.396484C15.9102 0.396484 19.5195 2.50195 21.4961 5.89648C23.4727 9.33398 23.4727 13.502 21.4961 16.8965C19.5195 20.334 15.9102 22.3965 12 22.3965ZM9.25 15.5215H9.9375H11.3125V11.3965H10.2812H9.59375V10.0215H10.2812H12H12.6875V10.709V15.5215H14.0625H14.75V16.8965H14.0625H9.9375H9.25V15.5215ZM13.0312 8.30273H10.9688V6.24023H13.0312V8.30273Z" fill="currentColor"></path>
+                </svg>
+                </span>
+                <div class="tooltip_text">
+                  {{- block.settings.tooltip_text -}}
+                </div>
+              </div>
+              {% endif %}
+            {% endif %}
+           {% endif %}
+          {% if is_b2b_customer and template.suffix == 'b2b-b2c' %}
+            {% if block.settings.b2b_tooltip_text != blank and product.selected_or_first_available_variant.option1 contains 'Mieten' %}
+              <div class="tooltip_wrapper">
+                <span class="icon_wrap">
+                <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 1.77148C8.51953 1.77148 5.38281 3.61914 3.66406 6.58398C1.90234 9.5918 1.90234 13.2441 3.66406 16.209C5.38281 19.2168 8.51953 21.0215 12 21.0215C15.4375 21.0215 18.5742 19.2168 20.293 16.209C22.0547 13.2441 22.0547 9.5918 20.293 6.58398C18.5742 3.61914 15.4375 1.77148 12 1.77148ZM12 22.3965C8.04688 22.3965 4.4375 20.334 2.46094 16.8965C0.484375 13.502 0.484375 9.33398 2.46094 5.89648C4.4375 2.50195 8.04688 0.396484 12 0.396484C15.9102 0.396484 19.5195 2.50195 21.4961 5.89648C23.4727 9.33398 23.4727 13.502 21.4961 16.8965C19.5195 20.334 15.9102 22.3965 12 22.3965ZM9.25 15.5215H9.9375H11.3125V11.3965H10.2812H9.59375V10.0215H10.2812H12H12.6875V10.709V15.5215H14.0625H14.75V16.8965H14.0625H9.9375H9.25V15.5215ZM13.0312 8.30273H10.9688V6.24023H13.0312V8.30273Z" fill="currentColor"></path>
+                </svg>
+                </span>
+                <div class="tooltip_text">
+                  {{- block.settings.b2b_tooltip_text -}}
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endcapture %}
+      {%- if picker_type == 'swatch' -%}
+        <fieldset class="js product-form__input product-form__input--swatch">
+          <legend class="form__label">
+            {{ option.name }}:
+            <span data-selected-value>
+              {{- option.selected_value -}}
+            </span>
+            {{ option_tooltip }}
+          </legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type,
+            is_b2b_customer: is_b2b_customer
+          %}
+        </fieldset>
+      {%- elsif picker_type == 'button' -%}
+        <fieldset class="js product-form__input product-form__input--pill">
+          <legend class="form__label">
+            {{ option.name }}
+           {{ option_tooltip }}
+          </legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type,
+            is_b2b_customer: is_b2b_customer
+          %}
+        </fieldset>
+      {%- else -%}
+        <div class="product-form__input product-form__input--dropdown">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+            {{ option_tooltip }}
+          </label>
+          <div class="select">
+            {%- if picker_type == 'swatch_dropdown' -%}
+              <span
+                data-selected-value
+                class="dropdown-swatch"
+              >
+                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+              </span>
+            {%- endif -%}
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type,
+                is_b2b_customer: is_b2b_customer
+              %}
+            </select>
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
+{%- endunless -%}

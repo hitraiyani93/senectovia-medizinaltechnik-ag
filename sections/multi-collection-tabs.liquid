@@ -1,0 +1,182 @@
+{% schema %}
+{
+  "name": "Multi Collection Tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "multi_tab_class",
+      "label": "Custom Class",
+      "default": "fetured_collection_tabs"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured Collections"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show View All Link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text_view_all",
+      "label": "View all text",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "url_view_all",
+      "label": "View all URL",
+      "default": "/collections/all"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab Title",
+          "default": "Collection Tab"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Multi Collection Tabs"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+  <div class="{{ section.settings.multi_tab_class }} collection section-{{ section.id }}-padding" id="collection-{{ section.id }}">
+    <div class="collection__title title-wrapper page-width">
+      {% if section.settings.title != blank %}
+        <h2 class="title collection-list-title inline-richtext h1 scroll-trigger animate--slide-in">{{ section.settings.title }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="tabs-nav page-width">
+      <ul class="tabs">
+        {% for block in section.blocks %}
+          {% assign collection = block.settings.collection %}
+          {% if collection %}
+            <li class="tab-item{% if forloop.first %} active{% endif %}" data-tab="tab-{{ forloop.index }}">
+              {{ block.settings.tab_title | escape }}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      {% if section.settings.show_view_all %}
+        <a id="view-all-link" class="view-all-link" href="{{ section.settings.url_view_all }}">
+          {{ section.settings.text_view_all }} <span class="svg-wrapper">{{ 'icon-chevron.svg' | inline_asset_content }}</span>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="tabs-content">
+      {% for block in section.blocks %}
+        {% assign collection = block.settings.collection %}
+        {% if collection %}
+          <div class="tab-content{% if forloop.first %} active{% endif %}" id="tab-{{ forloop.index }}">
+            <slider-component class="slider-mobile-gutter page-width">
+              <ul class="grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list">
+                {% for product in collection.products limit: 8 %}
+                  <li class="grid__item">
+                    {% render 'card-product', card_product: product %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </slider-component>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .fetured_collection_tabs .tabs { display: flex; gap: 0.8rem; list-style: none; padding: 0; margin: 0; }
+  .fetured_collection_tabs .tab-item { cursor: pointer; padding: 0.9rem 1.6rem; border: 1px solid rgb(var(--color-button)); border-radius: 5.2rem; color: rgb(var(--color-button)); font-size: 1.4rem; line-height: 1.1;}
+  .fetured_collection_tabs .tab-item.active { background: rgb(var(--color-button)); color: rgb(var(--color-white)); }
+  .fetured_collection_tabs .tabs-content .tab-content { display: none; }
+  .fetured_collection_tabs .tabs-content .tab-content.active { display: block; }
+  .fetured_collection_tabs .view-all-link { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid rgb(var(--color-button)); text-decoration:none; color: rgb(var(--color-button)); line-height: 1.1; }
+  .fetured_collection_tabs .view-all-link .svg-wrapper { transform: rotate(-90deg); height: 0.7rem; width: 1.2rem;}
+  .fetured_collection_tabs .view-all-link .svg-wrapper svg { height: 0.7rem; width: 1.2rem; }
+  .fetured_collection_tabs .view-all-link .svg-wrapper svg path{ fill: rgb(var(--color-button)); stroke: rgb(var(--color-button));}
+
+  .fetured_collection_tabs {
+    padding-bottom: 8rem;
+  }
+  .fetured_collection_tabs .title {
+    margin-bottom: 4rem;
+  }
+  .fetured_collection_tabs.collection .product-grid .card--media .card__inner {
+    background: #F8F8F8;
+    border-radius: 1.6rem 1.6rem 0 0;
+  }
+  .fetured_collection_tabs.collection .product-grid .card--media>.card__content {
+    background: rgb(var(--color-white));
+    border-radius: 0 0 3.2rem 3.2rem;
+  }
+  .fetured_collection_tabs.collection .product-grid .card--media>.card__content .card__heading {
+    font-weight: var(--font-heading-weight);
+  }
+  .fetured_collection_tabs.collection .tabs-nav {
+    margin: 0 auto 4.8rem;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  @media screen and (min-width: 768px) {
+    .fetured_collection_tabs.collection .tabs-nav {
+      flex-direction:row;
+      justify-content: space-between;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.tab-item');
+    const contents = document.querySelectorAll('.tab-content');
+    const viewAllLink = document.getElementById('view-all-link');
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', function () {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById('tab-' + (index + 1)).classList.add('active');
+
+        // update View All link
+        const href = document.querySelector('#tab-' + (index + 1) + ' a[href*="/collections/"]');
+        if (href && viewAllLink) {
+          viewAllLink.href = href.href;
+        }
+      });
+    });
+  });
+</script>

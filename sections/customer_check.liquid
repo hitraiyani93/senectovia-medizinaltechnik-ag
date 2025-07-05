@@ -1,0 +1,10 @@
+{% assign is_b2b_customer = false %}
+{% if customer %}  
+  {% for cust_tag in customer.tags %}
+    {% assign b_tab = cust_tag | downcase %}
+    {% if b_tab == 'b2b' %}
+      {% assign is_b2b_customer = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+<div id="customer_check" class="hidden">{{- is_b2b_customer -}}</div>

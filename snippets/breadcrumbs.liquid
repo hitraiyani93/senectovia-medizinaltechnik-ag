@@ -1,0 +1,31 @@
+{{ 'component-breadcrumbs.css' | asset_url | stylesheet_tag }}
+{% assign is_product = false %}
+{% assign is_collection = false %}
+
+{% if template contains 'product' %}
+  {% assign is_product = true %}
+{% elsif template contains 'collection' %}
+  {% assign is_collection = true %}
+{% endif %}
+
+{% assign active_collection = collection %}
+
+{% if is_product %}
+  {% if active_collection == nil and product.collections.size > 0 %}
+    {% assign active_collection = product.collections.first %}
+  {% endif %}
+{% endif %}
+
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <a href="{{ routes.root_url }}">Shop</a>
+
+  {% if active_collection %}
+    <span class="separator">/</span>
+    <a href="{{ active_collection.url }}">{{ active_collection.title }}</a>
+  {% endif %}
+
+  {% if is_product %}
+    <span class="separator">/</span>
+    <span>{{ product.title }}</span>
+  {% endif %}
+</nav>

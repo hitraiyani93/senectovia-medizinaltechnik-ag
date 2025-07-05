@@ -1,0 +1,189 @@
+{% if template == 'index' %}
+  {% assign menu_handle = settings.filter_menu_homepage %}
+{% elsif template == 'collection.pflegeheime' %}
+  {% assign menu_handle = settings.filter_menu_pflegeheime %}
+{% elsif template == 'collection.spitaler-kliniken' %}
+  {% assign menu_handle = settings.filter_menu_spitaler_kliniken %}
+{% endif %}
+
+{% assign menu_links = linklists[menu_handle].links %}
+<ul class="filter-menu">
+  {% for link in menu_links %}
+    <li class="{% if link.active %}active{% endif %}">
+      <a href="{{ link.url }}">{{ link.title }}</a>
+      {% if link.links != blank %}
+        <ul class="sub-menu">
+          {% for sub_link in link.links %}
+            <li>
+              <a href="{{ sub_link.url }}" class="{% if sub_link.active %}active{% endif %}">{{ sub_link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+<script>
+  document.addEventListener('click', function(event) {
+    document.querySelectorAll('.header-bottom-left .main-dropdown[open]').forEach(detail => {
+      if (!detail.contains(event.target)) {
+        detail.removeAttribute('open');
+      }
+    });
+  });
+</script>
+
+<style>
+  /******************** FILTER CSS START ********************/
+  .custom-filter-title, facet-filters-form .facets__summary  {
+    font-size: 1.6rem;
+    font-weight: var(--font-heading-weight);
+    color: rgb(var(--color-foreground));
+    text-transform: uppercase;
+    margin: 0 0 2.4rem !important;
+    padding: 0 !important;
+  }
+  .facets__disclosure-vertical {
+    margin: 0 0 5.4rem;
+  }
+  .facets-wrap {
+    padding: 0;
+    margin: 0;
+  }
+  facet-filters-form .active-facets-vertical-filter h2 {
+    display: none;
+  }
+  .facets-vertical .facets__disclosure-vertical {
+    border: 0;
+  }
+  .filter-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .filter-menu li a, .facets__label {
+    display: block;
+    padding: 0.6rem 0 0.6rem 3rem;
+    text-decoration: none;
+    color: rgb(var(--color-header-border));
+    font-weight:var(--font-heading-weight);
+    line-height: 2rem;
+    position: relative;
+  }
+  .facets__label span {
+    text-decoration: none;
+    color: rgb(var(--color-header-border));
+    font-size: 1.6rem;
+    font-weight:var(--font-heading-weight);
+    line-height: 2rem;
+  }
+  .facets-vertical .facet-checkbox input[type=checkbox] {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    margin: 0;
+  }
+  .facet-checkbox>svg, .facet-checkbox>.svg-wrapper {
+    display:none;
+  }
+  .filter-menu li a:before, .facets__label:before {
+    content: '';
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    background:rgb(var(--color-secondary-button));
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .filter-menu li a:after, .facets__label:after {
+    content: '';
+    display: flex;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('https://cdn.shopify.com/s/files/1/0925/9073/5747/files/icon-sign.svg?v=1750011251') no-repeat;
+    opacity: 0;
+  }
+  .filter-menu li.active>a:after, .facets__label.active:after {
+   opacity: 1;
+  }
+  .facets-vertical .facets-container {
+    padding-top: 3.3rem;
+  }
+  .filter-menu ul.sub-menu {
+    list-style-type: none;
+    padding-left: 2rem;
+  }
+  .facets__header-vertical, .facets__form-vertical .field:before {
+    display: none;
+  }
+  .facets__form-vertical .field__input, .facets__form-vertical .field:after {
+    border-radius: 0.5rem;
+  }
+  .facets__form-vertical .field:hover.field:after {
+    box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground),var(--inputs-border-opacity));
+    border-radius: 0.5rem;
+  }
+  /******************** FILTER CSS END ********************/
+  
+  /******************** HEADER FILTER CSS START ********************/
+  .main-dropdown {
+    position: relative;
+    width: max-content;
+  }
+  
+  .main-dropdown summary {
+    color: rgb(var(--color-white));
+    background-color: #464951;
+    background-image: url(https://cdn.shopify.com/s/files/1/0925/9073/5747/files/icon-filter.svg?v=1749993908);
+    gap:1rem;
+  }
+  
+  .main-dropdown[open] summary .svg-wrapper{
+    transform: rotate(180deg);
+  }
+  
+  .main-dropdown summary .svg-wrapper {
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: rotate(0deg);
+    transition: all 0.3s;
+  }
+    
+  .main-dropdown summary svg path {
+    fill:  rgb(var(--color-white));
+    stroke:  rgb(var(--color-white));
+  }
+    
+  .main-dropdown ul {
+    margin: 1.6rem 0 0;
+    padding: 0.6rem 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #E9E8EE;
+    border: 1px solid rgba(var(--color-foreground),var(--popup-border-opacity));
+    border-radius: 0.5rem;
+    z-index: 100;
+    min-width: 20.6rem;
+  }
+  
+  .main-dropdown ul li a:hover:after {
+   opacity: 1;
+  }
+  
+  .main-dropdown ul.sub-menu {
+      position: unset;
+      border: 0;
+      margin: 0;
+      padding-left: 2rem;
+  }
+  /******************** HEADER FILTER CSS END ********************/
+</style>

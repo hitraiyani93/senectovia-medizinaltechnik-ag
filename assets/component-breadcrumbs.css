@@ -1,0 +1,14 @@
+.breadcrumbs {
+  margin-bottom: 4.8rem;
+}
+
+.breadcrumbs a, .breadcrumbs span {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: rgb(133,133,133);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover, .breadcrumbs span:not(.separator), .breadcrumbs a:last-child {
+  color: rgba(var(--color-link), 1);
+}
