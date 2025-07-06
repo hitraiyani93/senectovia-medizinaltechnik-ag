@@ -101,7 +101,7 @@
   .section-collection-list .collection-list .collection-list__item:nth-child(2) { grid-area: 2 / 1 / 3 / 2; }
   .section-collection-list .collection-list .collection-list__item:nth-child(3) { grid-area: 2 / 2 / 3 / 3; }
   .section-collection-list .collection-list .collection-list__item:nth-child(4) { grid-area: 3 / 1 / 5 / 2; }
-  .section-collection-list .collection-list .collection-list__item:nth-child(5) { grid-area: 3 / 2 / 4 / 3; }
+  .section-collection-list .collection-list .collection-list__item:nth-child(5) { grid-area: 3 / 2 / 5 / 3; }
 }
 
 .section-collection-list .collection-list .collection-list__item .gradient {
@@ -109,10 +109,15 @@
   border-radius: 0;
 }
 .section-collection-list .collection-list .collection-list__item .ratio:before {
-  padding-bottom: calc(var(--ratio-percent) - 90px);
+  padding-bottom: calc(30.7rem - 90px);
+}
+.section-collection-list .collection-list .collection-list__item:nth-child(4) .ratio:before,
+.section-collection-list .collection-list .collection-list__item:nth-child(5) .ratio:before { 
+  padding-bottom: calc(((30.7rem * 2) + 2.4rem) - 90px);
 }
 .section-collection-list .collection-list .collection-list__item .card__media img {
   object-fit: contain;
+  padding: 1rem;;
 }
 .collection-list__item .card__content {
   position: absolute;

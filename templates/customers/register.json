@@ -1,1 +1,44 @@
-{"sections":{"main":{"type":"main-register","blocks":{"info_box_cpgg6z":{"type":"info_box","settings":{"heading":"Account Info","content":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit uma. Pellentesque sit amet sapien fringita, muttis ligula consectetur, ultrices mauris, Maecenas vitae matty tellus. Nutam quis imperdiet augue. Vestibulum auctor<\/p>"}},"info_box_DCncAz":{"type":"info_box","settings":{"heading":"Discount Info","content":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit uma. Pellentesque sit amet sapien fringita, muttis ligula consectetur, ultrices mauris, Maecenas vitae matty tellus. Nutam quis imperdiet augue. Vestibulum auctor<\/p>"}}},"block_order":["info_box_cpgg6z","info_box_DCncAz"],"settings":{"login_link":"Schon einen Account erstellt? <a href=\"\/account\/login\" title=\"\/account\/login\">Login<\/a>","padding_top":36,"padding_bottom":36}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-register",
+      "blocks": {
+        "info_box_cpgg6z": {
+          "type": "info_box",
+          "settings": {
+            "heading": "Account Info",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit uma. Pellentesque sit amet sapien fringita, muttis ligula consectetur, ultrices mauris, Maecenas vitae matty tellus. Nutam quis imperdiet augue. Vestibulum auctor</p>"
+          }
+        },
+        "info_box_DCncAz": {
+          "type": "info_box",
+          "settings": {
+            "heading": "Discount Info",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit uma. Pellentesque sit amet sapien fringita, muttis ligula consectetur, ultrices mauris, Maecenas vitae matty tellus. Nutam quis imperdiet augue. Vestibulum auctor</p>"
+          }
+        }
+      },
+      "block_order": [
+        "info_box_cpgg6z",
+        "info_box_DCncAz"
+      ],
+      "settings": {
+        "login_link": "Schon einen Account erstellt? <a href=\"/account/login\" title=\"/account/login\">Login</a>",
+        "padding_top": 60,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

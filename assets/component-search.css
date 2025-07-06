@@ -72,3 +72,35 @@ input::-webkit-search-decoration {
 .template-search__results {
   position: relative;
 }
+
+/******************** FILTER CSS START ********************/
+.template-search .facets-wrapper,
+.template-search .custom-filter-title,
+.template-search facet-filters-form .facets__summary,
+.template-search .field__input {
+  color: rgb(var(--color-button));
+}
+.template-search .filter-menu li a:before,
+.template-search .facets__label:before {
+  background-color: rgb(var(--color-gradient-alt));
+}
+.template-search .field__input {
+  background-color: rgb(var(--color-gradient-alt));
+}
+.template-search .field:after {
+  box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-button), var(--inputs-border-opacity));
+}
+.template-search .field__label {
+  color: rgba(var(--color-button), 0.75);
+}
+.template-search .active-facets__button--light .active-facets__button-inner {
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-header-border), 0.2);
+  color: rgb(var(--color-header-border));
+}
+.template-search .active-facets__button--light:hover .active-facets__button-inner {
+  box-shadow: 0 0 0 .2rem rgba(var(--color-header-border), .4);
+}
+.template-search .underlined-link {
+    color: rgba(var(--color-foreground), var(--alpha-link));
+}
+/******************** FILTER CSS END ********************/

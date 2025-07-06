@@ -468,6 +468,9 @@
       "title": "Account erstellen",
       "first_name": "Vorname",
       "last_name": "Nachname",
+      "b2b_checkbox":"Sind Sie ein B2B-Kunde?",
+      "company_name":"Geschäftsnahme",
+      "phone_number":"Telefonnummer",
       "email": "E-Mail",
       "password": "Passwort",
       "submit": "Account erstellen"

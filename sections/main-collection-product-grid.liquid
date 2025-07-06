@@ -36,6 +36,28 @@
   }
 {%- endstyle -%}
 
+{% if collection.handle == 'all' %}
+  <style type="text/css">
+  .template-404 .title + * {
+      margin-top: 1rem;
+    }
+  
+    @media screen and (min-width: 750px) {
+      .template-404 .title + * {
+        margin-top: 2rem;
+      }
+    }
+  </style>
+  
+  <div class="template-404 page-width page-margin center">
+    <h1 class="title">
+      {{ 'templates.404.title' | t }}
+    </h1>
+    <a href="{{ routes.root_url }}" class="button">
+      {{ 'general.continue_shopping' | t }}
+    </a>
+  </div>
+{% else %}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
@@ -200,7 +222,7 @@
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
 </div>
-
+{% endif %}
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",

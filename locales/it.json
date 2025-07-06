@@ -505,6 +505,9 @@
       "first_name": "Nome",
       "last_name": "Cognome",
       "email": "Indirizzo email",
+      "b2b_checkbox":"Sei un cliente B2B?",
+      "company_name":"ragione sociale",
+      "phone_number":"numero di telefono",
       "password": "Password",
       "submit": "Crea"
     },

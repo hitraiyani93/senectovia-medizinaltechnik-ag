@@ -1,1 +1,214 @@
-{"sections":{"main":{"type":"main-list-collections","disabled":true,"settings":{"title":"Collections","sort":"alphabetical","image_ratio":"square","columns_desktop":3,"columns_mobile":"2"}},"rich_text_pjxgQp":{"type":"rich-text","blocks":{"heading_TmY73Q":{"type":"heading","settings":{"heading":"Das richtige System, zum richtigen Zeitpunkt, zur richtigen Indikation.","heading_size":"h0"}},"text_N6xYKW":{"type":"text","disabled":true,"settings":{"text":"<p>Teile Infos über deine Marke mit deinen Kunden. Beschreibe ein Produkt, kündige etwas an oder heiße Kunden willkommen.<\/p>"}},"button_A86gi3":{"type":"button","disabled":true,"settings":{"button_label":"Schaltflächenbeschriftung","button_link":"","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_TmY73Q","text_N6xYKW","button_A86gi3"],"name":"t:sections.rich-text.presets.name","settings":{"custom-class":"","desktop_content_position":"left","content_alignment":"left","color_scheme":"scheme-3","full_width":true,"padding_top":80,"padding_bottom":80}},"collection_list_wgHe3E":{"type":"collection-list","blocks":{"featured_collection_GRR9Et":{"type":"featured_collection","settings":{"collection":"rund-ums-bett"}},"featured_collection_xQjXeH":{"type":"featured_collection","settings":{"collection":"lymphatische-systeme"}},"featured_collection_8JFgqX":{"type":"featured_collection","settings":{"collection":"rollatoren"}},"featured_collection_Kr4PHK":{"type":"featured_collection","settings":{"collection":"rollstuhl-produkte"}},"featured_collection_cHihtG":{"type":"featured_collection","settings":{"collection":"wechseldrucksystem"}},"featured_collection_Bdi8jt":{"type":"featured_collection","settings":{"collection":"dusch-und-toilettenstuhle"}}},"block_order":["featured_collection_GRR9Et","featured_collection_xQjXeH","featured_collection_8JFgqX","featured_collection_Kr4PHK","featured_collection_cHihtG","featured_collection_Bdi8jt"],"name":"t:sections.collection-list.presets.name","settings":{"title":"Produkt Kategorien","heading_size":"h1","image_ratio":"adapt","columns_desktop":4,"color_scheme":"scheme-2","show_view_all":false,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":80,"padding_bottom":80}}},"order":["main","rich_text_pjxgQp","collection_list_wgHe3E"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "settings": {
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    },
+    "rich_text_pjxgQp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TmY73Q": {
+          "type": "heading",
+          "settings": {
+            "heading": "Das richtige System, zum richtigen Zeitpunkt, zur richtigen Indikation.",
+            "heading_size": "h0"
+          }
+        },
+        "text_N6xYKW": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Teile Infos über deine Marke mit deinen Kunden. Beschreibe ein Produkt, kündige etwas an oder heiße Kunden willkommen.</p>"
+          }
+        },
+        "button_A86gi3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Schaltflächenbeschriftung",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_TmY73Q",
+        "text_N6xYKW",
+        "button_A86gi3"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "custom-class": "",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collection_list_dN4chX": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_Ftg7pb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-ums-bett"
+          }
+        },
+        "featured_collection_4VCkTJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-ums-bad"
+          }
+        },
+        "featured_collection_iJHBPD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-um-kinder-reha"
+          }
+        },
+        "featured_collection_Mtt77k": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-um-mobilitat"
+          }
+        },
+        "featured_collection_bEnynM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-um-den-alltag"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_Ftg7pb",
+        "featured_collection_4VCkTJ",
+        "featured_collection_iJHBPD",
+        "featured_collection_Mtt77k",
+        "featured_collection_bEnynM"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Heimpflege & Privatkunden",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-dc0af555-7fd0-4f94-b45a-d5f19d36a439",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collection_list_cNfHaL": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_KEtxwg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "adipositas"
+          }
+        },
+        "featured_collection_QpXpJ4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "dekubitus"
+          }
+        },
+        "featured_collection_Vqggrn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mobilisation"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_KEtxwg",
+        "featured_collection_QpXpJ4",
+        "featured_collection_Vqggrn"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Pflegeheime",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-6c9b7173-e02a-4dee-89c9-1805d30fea8e",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collection_list_bWQAig": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_D7FQ7Y": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-ums-bett"
+          }
+        },
+        "featured_collection_nQwCrb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-ums-bad"
+          }
+        },
+        "featured_collection_xr9DBE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-um-kinder-reha"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_D7FQ7Y",
+        "featured_collection_nQwCrb",
+        "featured_collection_xr9DBE"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Spitäler & Kliniken",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-dc0af555-7fd0-4f94-b45a-d5f19d36a439",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_pjxgQp",
+    "collection_list_dN4chX",
+    "collection_list_cNfHaL",
+    "collection_list_bWQAig"
+  ]
+}

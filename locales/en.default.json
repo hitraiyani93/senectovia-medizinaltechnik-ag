@@ -497,6 +497,9 @@
       "last_name": "Last name",
       "email": "Email",
       "password": "Password",
+      "b2b_checkbox":"Are you B2B customer?",
+      "company_name":"Company name",
+      "phone_number":"Phone number",
       "submit": "Create"
     },
     "reset_password": {

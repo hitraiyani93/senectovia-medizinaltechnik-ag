@@ -478,6 +478,9 @@
       "title": "Créer un compte",
       "first_name": "Prénom",
       "last_name": "Nom de famille",
+      "b2b_checkbox":"Êtes-vous un client B2B ?",
+      "company_name":"nom commercial",
+      "phone_number":"numéro de téléphone",
       "email": "E-mail",
       "password": "Mot de passe",
       "submit": "Créer"

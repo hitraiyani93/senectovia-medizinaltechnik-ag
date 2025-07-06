@@ -15,8 +15,13 @@
 <script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
 
 <style>
+  .template-search {
+    background: rgb(var(--color-white));
+    border-radius: 3rem 3rem 0 0;
+  }
   .template-search__header {
     margin-bottom: 3rem;
+    display: none;
   }
 
   .template-search__search {
@@ -40,6 +45,14 @@
 
   .search__button .icon {
     height: 1.8rem;
+  }
+
+  .card__heading.h5 a,
+  .card-information>.price {
+    color: rgb(var(--color-header-border));
+  }
+  .card-information>.price .unit-price {
+    color: rgba(var(--color-header-border), 0.7);
   }
 </style>
 
@@ -215,7 +228,9 @@
               class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
               id="main-search-filters"
               data-id="{{ section.id }}"
-            >
+            >            
+              <h2 class="custom-filter-title">Filter</h2>
+              {% render 'component-filter' %}
               {% render 'facets',
                 results: search,
                 enable_filtering: section.settings.enable_filtering,

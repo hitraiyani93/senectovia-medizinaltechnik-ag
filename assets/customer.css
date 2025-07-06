@@ -1,6 +1,6 @@
 .customer:not(.account):not(.order) {
   margin: 0 auto 0 0;
-  max-width: 33.4rem;
+  max-width: 100%;
 }
 
 @media screen and (min-width: 750px) {
@@ -9,16 +9,16 @@
   }
 }
 
-.customer > h1,
+.customer h1,
 .customer__title {
   margin: 0 0 6rem 0;
   color: rgb(var(--color-button));
   font-weight: var(--font-body-weight);
 }
 
-.customer form {
+/* .customer form {
   margin-top: 4rem;
-}
+} */
 
 .customer button {
   margin: 4rem 0;
@@ -347,7 +347,8 @@
 }
 
 /* Login */
-.login a {
+.login a,
+.register a {
   display: block;
   margin: 0 auto 0 0;
   width: fit-content;
@@ -364,7 +365,8 @@
   margin-top: 1rem;
 }
 
-.login .create_account_link {
+.login .create_account_link,
+.register .login_link_wrapper {
   display: flex;
   gap: 0.5rem;
   color: rgb(var(--color-button));
@@ -779,3 +781,78 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
 }
+
+/*************** CUSTOM CSS START  ***************/
+.register_info_box {
+  margin: 4rem 0;
+}
+.register_info_wrapper, .register_info_wrapper h2 {
+  color: rgb(var(--color-header-border));
+  font-weight: var(--font-body-weight);
+}
+.register_info_wrapper h2 {
+  margin-top: 0;
+  margin-bottom: 2.4rem;
+}
+.b2b_checkbox_wrapper {
+  margin: 2rem 0 0;
+}
+.b2b_checkbox_wrapper input {
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+.b2b_checkbox_wrapper label {
+  position: relative;
+  padding: 0.6rem 0 0.6rem 3rem;
+  font-size: 1.4rem;
+  color: rgb(var(--color-header-border));
+  font-weight: var(--font-heading-weight);
+}
+.b2b_checkbox_wrapper label:before {
+  content: '';
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  background: rgb(var(--color-secondary-button));
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.b2b_checkbox_wrapper label:after {
+  content: '';
+  display: flex;
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  left: 0.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(https://cdn.shopify.com/s/files/1/0925/9073/5747/files/icon-sign.svg?v=1750011251) no-repeat;
+  opacity: 0;
+}
+.b2b_checkbox_wrapper input:checked + label:after {
+  opacity: 1;
+}
+.b2b_fields {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .customer.register:not(.account):not(.order) {
+    max-width: 100%;
+  }
+  .register-wrapper {
+    display: flex;
+    gap: 6rem;
+  }
+  .register_from_wrapper, .register_info_wrapper {
+    width: 50%;
+  }
+  .register_info_box {
+    margin: 0 0 4rem;
+  }
+}
+/*************** CUSTOM CSS END  ***************/
