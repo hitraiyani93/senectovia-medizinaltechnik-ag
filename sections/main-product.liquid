@@ -99,10 +99,7 @@
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper {% if section.settings.enable_sticky_info %}product__column-sticky{% endif %}">
         {% render 'product-media-gallery', variant_images: variant_images %}
-        <div class="product-pdf-download">
-          {% if product.metafields.custom.produktflyer %}<a href="{{ product.metafields.custom.produktflyer | file_url }}" target="_blank" class="button button--secondary">{{ section.settings.pdf-download-button-1 }}</a>{% endif %}
-          {% if product.metafields.custom.anleitung %}<a href="{{ product.metafields.custom.anleitung | file_url }}" target="_blank" class="button button--secondary">{{ section.settings.pdf-download-button-2 }}</a>{% endif %}
-        </div>
+        <div class="product-pdf-download">{% if product.metafields.custom.produktflyer %}<a href="{{ product.metafields.custom.produktflyer | file_url }}" target="_blank" class="button button--secondary">{{ section.settings.pdf-download-button-1 }}</a>{% endif %}{% if product.metafields.custom.anleitung %}<a href="{{ product.metafields.custom.anleitung | file_url }}" target="_blank" class="button button--secondary">{{ section.settings.pdf-download-button-2 }}</a>{% endif %}</div>
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -149,7 +146,7 @@
                 {% unless is_b2b_customer %}
                   <div
                     id="login-text-{{ section.id }}"
-                    class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                    class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %} b2b-login-text"
                     {{ block.shopify_attributes }}
                   >
                     {{- block.settings.text -}}
@@ -306,6 +303,7 @@
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
+              {% if product.selected_or_first_available_variant.sku != blank %}  
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
                   id="Sku-{{ section.id }}"
@@ -315,6 +313,7 @@
                   Artikel-ID <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
                   {{- product.selected_or_first_available_variant.sku -}}
                 </p>
+              {% endif %} 
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
@@ -832,19 +831,7 @@
 </product-info>
 
 <script>
-  {% comment %}
-  $(window).on('load',function(){
-    {% if template.suffix == 'b2b-b2c' %}
-      {% assign option_value = product.selected_or_first_available_variant.option1 | downcase %}    
-      {% if is_b2b_customer and option_value == 'mieten mit kreditkarte' %}
-        $('.product-form__input').first().find('input').first().trigger('click');
-      {% elsif is_b2b_customer == false and option_value == 'mieten auf rechnung' %}
-        $('.product-form__input').first().find('label').first().trigger('click');
-      {% endif %}
-    {% endif %}
-  })
-  {% endcomment %}
-  
+ 
 $(document).ready(function(){
   
   {% if template.suffix == 'b2b-b2c' %}
@@ -862,7 +849,15 @@ $(document).ready(function(){
   
   {% if template.suffix == blank and is_b2b_customer %}
     $('.product-form__submit.disabled.b2c_product').css({'pointer-events':'none'});
-    // $('[data-block-handle="productCalendar"]').hide();    
+    // $('[data-block-handle="productCalendar"]').hide();
+    const $variantSelects = $('variant-selects');
+    $variantSelects.each(function () {
+      $(this).attr('disabled', true)
+             .css({
+               'pointer-events': 'none',
+               'opacity': '0.5'
+             });
+    });
   {% endif %}
 
   

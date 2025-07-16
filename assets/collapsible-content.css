@@ -155,4 +155,9 @@
   padding: 0;
   color: rgba(var(--color-foreground), 1);
 }
+@media screen and (max-width: 749px) {
+  .collapsible-content-wrapper-narrow {
+    padding: 0 1.5rem;
+  }
+}
 /***************** CUSTOM CSS END *****************/

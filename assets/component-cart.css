@@ -43,7 +43,7 @@ cart-items.is-empty .title-wrapper-with-link,
 
 @media screen and (min-width: 990px) {
   .cart__warnings {
-    padding: 7rem 0 1rem;
+    padding: 7rem 0;
   }
 
   .cart__empty-text {
@@ -240,7 +240,7 @@ cart-items {
 }
 .cart-items thead th {
   font-size: 1.6rem;
-  line-height: 2.5rem;
+  line-height: 1;
   font-weight: var(--font-body-weight);
   opacity: 1;
   color: rgb(var(--color-sku));

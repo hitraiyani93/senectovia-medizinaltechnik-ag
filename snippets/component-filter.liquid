@@ -1,4 +1,4 @@
-{% if template == 'index' or template == 'search' %}
+{% if template == 'index' %}
   {% assign menu_handle = settings.filter_menu_homepage %}
 {% elsif template == 'collection.pflegeheime' %}
   {% assign menu_handle = settings.filter_menu_pflegeheime %}
@@ -139,7 +139,7 @@
     width: max-content;
   }
   
-  .main-dropdown summary {
+  .main-dropdown summary, .mobile-facets__open {
     color: rgb(var(--color-white));
     background-color: #464951;
     background-image: url(https://cdn.shopify.com/s/files/1/0925/9073/5747/files/icon-filter.svg?v=1749993908);
@@ -184,6 +184,26 @@
       border: 0;
       margin: 0;
       padding-left: 2rem;
+  }
+  .mobile-facets__open .svg-wrapper {
+    display: none;
+  }
+  @media screen and (max-width: 749px) {
+    .facets-vertical .facets-container {
+      padding: 0 0 2rem;
+    }
+    .mobile-facets__main {
+      padding: 0;
+    }
+    .facets__price {
+      padding: 2rem 2.6rem;
+    }
+    .facets__price .field-currency ~ .field-currency {
+      display:none;
+    }
+    .facets-vertical .facets__price .field:last-of-type {
+        margin-left: 1rem;
+    }
   }
   /******************** HEADER FILTER CSS END ********************/
 </style>

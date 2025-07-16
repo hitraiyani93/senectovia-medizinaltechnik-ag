@@ -63,6 +63,33 @@
   {% if template.suffix == 'b2b-b2c' %}
     {% assign show_price = true %}
   {% endif %}
+
+  {% if template.name == 'search' %}
+    {% assign product_template = card_product.template_suffix %}
+    
+    {% if is_b2b_customer and product_template == blank %}
+      {% assign show_price = false %}
+    {% endif %}
+    {% if is_b2b_customer == false and product_template == 'b2b-2' %}
+      {% assign show_price = false %}
+    {% endif %}
+    {% if is_b2b_customer and product_template == 'b2b-2' %}
+      {% assign show_price = true %}
+    {% endif %}
+    {% if product_template == 'b2b-b2c' %}
+      {%- if card_product.has_only_default_variant == false -%}
+        {% assign option_value = card_product.selected_or_first_available_variant.title | handleize %}
+        
+        {% if is_b2b_customer and option_value == 'mieten-mit-kreditkarte' %}
+          {% assign show_price = false %}
+        {% elsif is_b2b_customer == false and option_value == 'mieten-auf-rechnung' %}
+          {% assign show_price = false %}
+        {% else %}
+          {% assign show_price = true %}
+        {% endif %}        
+      {%- endif -%}
+    {% endif %}
+  {% endif %}
   
   {%- liquid
     assign ratio = 1

@@ -31,12 +31,6 @@
       "id": "text_view_all",
       "label": "View all text",
       "default": "View all"
-    },
-    {
-      "type": "url",
-      "id": "url_view_all",
-      "label": "View all URL",
-      "default": "/collections/all"
     }
   ],
   "blocks": [
@@ -80,14 +74,14 @@
         {% for block in section.blocks %}
           {% assign collection = block.settings.collection %}
           {% if collection %}
-            <li class="tab-item{% if forloop.first %} active{% endif %}" data-tab="tab-{{ forloop.index }}">
+            <li class="tab-item{% if forloop.first %} active{% endif %}" data-tab="tab-{{ forloop.index }}" data-view-all-url="{{ block.settings.collection.url }}">
               {{ block.settings.tab_title | escape }}
             </li>
           {% endif %}
         {% endfor %}
       </ul>
       {% if section.settings.show_view_all %}
-        <a id="view-all-link" class="view-all-link" href="{{ section.settings.url_view_all }}">
+        <a id="view-all-link" class="view-all-link" href="{{ section.blocks.first.settings.collection.url }}">
           {{ section.settings.text_view_all }} <span class="svg-wrapper">{{ 'icon-chevron.svg' | inline_asset_content }}</span>
         </a>
       {% endif %}
@@ -115,7 +109,7 @@
 </div>
 
 <style>
-  .fetured_collection_tabs .tabs { display: flex; gap: 0.8rem; list-style: none; padding: 0; margin: 0; }
+  .fetured_collection_tabs .tabs { display: flex; flex-wrap: wrap; gap: 0.8rem; list-style: none; padding: 0; margin: 0; }
   .fetured_collection_tabs .tab-item { cursor: pointer; padding: 0.9rem 1.6rem; border: 1px solid rgb(var(--color-button)); border-radius: 5.2rem; color: rgb(var(--color-button)); font-size: 1.4rem; line-height: 1.1;}
   .fetured_collection_tabs .tab-item.active { background: rgb(var(--color-button)); color: rgb(var(--color-white)); }
   .fetured_collection_tabs .tabs-content .tab-content { display: none; }
@@ -159,23 +153,32 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const tabs = document.querySelectorAll('.tab-item');
-    const contents = document.querySelectorAll('.tab-content');
-    const viewAllLink = document.getElementById('view-all-link');
+    // Loop through all tabbed sections on the page
+    document.querySelectorAll('[id^="collection-"]').forEach(function(sectionEl) {
+      const tabs = sectionEl.querySelectorAll('.tab-item');
+      const contents = sectionEl.querySelectorAll('.tab-content');
+      const viewAllLink = sectionEl.querySelector('#view-all-link');
 
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', function () {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', function () {
+          // Remove active classes inside this section only
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
 
-        tab.classList.add('active');
-        document.getElementById('tab-' + (index + 1)).classList.add('active');
+          // Activate clicked tab and corresponding content
+          tab.classList.add('active');
+          const tabId = tab.getAttribute('data-tab');
+          const activeContent = sectionEl.querySelector('#' + tabId);
+          if (activeContent) {
+            activeContent.classList.add('active');
+          }
 
-        // update View All link
-        const href = document.querySelector('#tab-' + (index + 1) + ' a[href*="/collections/"]');
-        if (href && viewAllLink) {
-          viewAllLink.href = href.href;
-        }
+          // Update View All URL
+          const newUrl = tab.getAttribute('data-view-all-url');
+          if (viewAllLink && newUrl) {
+            viewAllLink.href = newUrl;
+          }
+        });
       });
     });
   });

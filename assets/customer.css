@@ -1,12 +1,23 @@
 .customer:not(.account):not(.order) {
-  margin: 0 auto 0 0;
+  margin: 0 auto;
   max-width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media screen and (min-width: 750px) {
   .customer:not(.account):not(.order) {
-    max-width: 50%;
+    max-width: var(--page-width);
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
+}
+
+.customer h1,
+.customer__title,
+.customer h2, .customer h3, .customer h4, .customer h5, .customer .h0, .customer .h1, .customer .h2, .customer .h3, .customer .h4, .customer .h5,
+body, .account table a, .order table a {
+  color: rgb(var(--color-button));
 }
 
 .customer h1,
@@ -33,7 +44,7 @@
   line-height: calc(1 + 0.6 / var(--font-body-scale));
   padding-left: 4.4rem;
   text-align: left;
-  margin-bottom: 4rem;
+  margin-bottom: 0;
 }
 
 .customer ul a {
@@ -60,11 +71,14 @@
 }
 
 .customer .field:after,
-.customer .field:before {
+.customer .field:before,
+.customer .select:after,
+.customer .select:before {
   display: none;
 }
 
-.customer .field input {
+.customer .field input,
+.customer select{
   border: 0.1rem solid #262626;
   color: rgb(var(--color-button)) !important;
   background: transparent;
@@ -103,7 +117,7 @@
 }
 
 .customer tbody {
-  color: rgb(var(--color-foreground));
+  color: rgb(var(--color-button));
 }
 
 .customer th,
@@ -348,7 +362,8 @@
 
 /* Login */
 .login a,
-.register a {
+.register a,
+.customer a {
   display: block;
   margin: 0 auto 0 0;
   width: fit-content;
@@ -445,7 +460,7 @@
 @media screen and (min-width: 990px) {
   :is(.account, .order) > div:nth-of-type(2) {
     display: flex;
-    margin-top: 5rem;
+    margin-top: 6rem;
   }
 }
 
@@ -691,11 +706,11 @@
   margin-top: 0rem;
 }
 
-@media screen and (min-width: 750px) {
+/* @media screen and (min-width: 750px) { */
   .addresses li > button:first-of-type {
-    margin-top: 3rem;
+    margin-right: 1rem;
   }
-}
+/* } */
 
 .addresses form button:first-of-type {
   margin-right: 1rem;
@@ -721,12 +736,15 @@ label[for='AddressProvinceNew'] {
 .addresses ul {
   list-style: none;
   padding-left: 0;
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
-li[data-address] {
+/* li[data-address] {
   margin-top: 5rem;
-}
+} */
 
 .addresses [aria-expanded='false'] ~ div[id] {
   display: none;
@@ -741,7 +759,7 @@ li[data-address] {
 }
 
 li[data-address] > h2 {
-  text-align: center;
+  /* text-align: center; */
   font-size: calc(var(--font-heading-scale) * 1.8rem);
   margin-bottom: 0;
 }
@@ -839,10 +857,27 @@ li[data-address] > h2 {
 .b2b_fields {
   margin-top: 1rem;
 }
-
+.customer.addresses button {
+  margin: 2rem 0 0;
+}
+.customer.addresses h1 {
+  margin: 0 0 1rem;
+}
+.customer.login:not(.account):not(.order),
+.customer.register:not(.account):not(.order){
+  max-width: 100%;
+}
 @media screen and (min-width: 750px) {
   .customer.register:not(.account):not(.order) {
-    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto 0 0;
+  }
+  .customer.login:not(.account):not(.order){
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 50%;
+    margin: 0 auto 0 0;
   }
   .register-wrapper {
     display: flex;

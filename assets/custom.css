@@ -30,7 +30,7 @@ body,
 header-bottom {
   display: flex;
   background-color: rgb(var(--color-gradient-alt));
-  padding: 3.5rem 0 0;
+  padding: 3.5rem 0;
 }
 header-bottom .page-width {
   width: 100%;
@@ -39,14 +39,30 @@ header-bottom .page-width {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
 }
 .header-bottom-left {
   display: flex;
-  width: 65%;
+  width: 100%;
   gap: 0.8rem;
 }
-.header-bottom-home {
+.header-bottom-right {
+  min-width: 35rem;
+}
+@media screen and (max-width: 749px) {
+  .header-bottom-right {
+    min-width: 7rem;
+  }
+  .header {
+    padding: 4px 1.5rem !important;
+  }
+  .desktop {
+    display: none !important;
+  }
+  .mobile {
+    display: block !important;
+  }
+}
+.header-bottom-home, .mobile-facets__open {
   padding: 1rem 2rem 1rem 4.4rem;
   border: 1px solid rgb(var(--color-header-border));
   border-radius: 5px;

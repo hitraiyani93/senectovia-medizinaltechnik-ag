@@ -228,9 +228,11 @@
               class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
               id="main-search-filters"
               data-id="{{ section.id }}"
-            >            
-              <h2 class="custom-filter-title">Filter</h2>
-              {% render 'component-filter' %}
+            > 
+              <div class="small-hide">
+                <h2 class="custom-filter-title">Filter</h2>
+                {% render 'component-filter' %}
+              </div>
               {% render 'facets',
                 results: search,
                 enable_filtering: section.settings.enable_filtering,

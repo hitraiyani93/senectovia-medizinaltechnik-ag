@@ -129,10 +129,11 @@
           id="main-collection-filters"
           data-id="{{ section.id }}"
         >
-          <h2 class="custom-filter-title">Filter</h2>
-          {% assign filter_collection = section.settings.collection_filter %}
-          {% render 'component-filter', menu_handle: filter_collection %}
-
+          <div class="small-hide">
+            <h2 class="custom-filter-title">Filter</h2>
+            {% assign filter_collection = section.settings.collection_filter %}
+            {% render 'component-filter', menu_handle: filter_collection %}
+          </div>
           {% render 'facets',
             results: collection,
             enable_filtering: section.settings.enable_filtering,

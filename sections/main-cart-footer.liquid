@@ -106,7 +106,11 @@
                   <small class="tax-note caption-large rte">
                     {%- if cart.duties_included and cart.taxes_included -%}
                       {%- if shop.shipping_policy.body == blank -%}
-                        {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+                        {% if is_b2b_customer == false %}
+                          {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+                        {%- else -%}
+                          {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy_b2b' | t }}
+                        {%- endif -%}
                       {%- else -%}
                         {{
                           'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
@@ -115,7 +119,11 @@
                       {%- endif -%}
                     {%- elsif cart.duties_included == false and cart.taxes_included -%}
                       {%- if shop.shipping_policy.body == blank -%}
-                        {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+                        {% if is_b2b_customer == false %}
+                          {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+                        {%- else -%}
+                          {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy_b2b' | t }}
+                        {%- endif -%}
                       {%- else -%}
                         {{
                           'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'

@@ -503,6 +503,10 @@
                 </p>
               </div>
             </div>
+            <div class="mobile-facets__summary">
+              {% assign filter_collection = section.settings.collection_filter %}
+              {% render 'component-filter', menu_handle: filter_collection %}
+            </div>
             <div
               id="FacetsWrapperMobile"
               class="mobile-facets__main has-submenu gradient"
@@ -689,7 +693,7 @@
                           </button>
 
                           {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
-                          <p class="mobile-facets__info">
+                          <p class="mobile-facets__info small-hide">
                             {{ 'products.facets.max_price' | t: price: max_price_amount }}
                           </p>
 
@@ -869,7 +873,7 @@
     </facet-filters-form>
   {%- endif -%}
   <div
-    class="product-count light{% if filter_type == 'vertical' or filter_type == 'horizontal' %} medium-hide large-up-hide{% endif %}"
+    class="product-count light{% if filter_type == 'vertical' or filter_type == 'horizontal' %} medium-hide large-up-hide{% endif %} small-hide"
     role="status"
   >
     <h2 class="product-count__text text-body">

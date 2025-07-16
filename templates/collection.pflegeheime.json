@@ -61,8 +61,19 @@
         "content_alignment": "left",
         "color_scheme": "scheme-6c9b7173-e02a-4dee-89c9-1805d30fea8e",
         "full_width": true,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 80
+      }
+    },
+    "custom_liquid_8cdQCQ": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "Separator Line",
+      "settings": {
+        "custom_liquid": "<div class=\"home-devider page-width\">\n<hr>\n</div>",
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "collection_list_pkthbJ": {
@@ -122,9 +133,9 @@
         "padding_bottom": 80
       }
     },
-    "custom_liquid_L3wdjQ": {
+    "custom_liquid_qB8kLi": {
       "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+      "name": "Separator Line",
       "settings": {
         "custom_liquid": "<div class=\"home-devider page-width\">\n<hr>\n</div>",
         "color_scheme": "scheme-3",
@@ -132,8 +143,108 @@
         "padding_bottom": 0
       }
     },
+    "multi_collection_tabs_CpmbMc": {
+      "type": "multi-collection-tabs",
+      "blocks": {
+        "collection_CcgfwL": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobilisation",
+            "tab_title": "Mobilisation"
+          }
+        },
+        "collection_Af8wbN": {
+          "type": "collection",
+          "settings": {
+            "collection": "adipositas",
+            "tab_title": "Adipositas"
+          }
+        },
+        "collection_tyxwEG": {
+          "type": "collection",
+          "settings": {
+            "collection": "dekubitus",
+            "tab_title": "Dekubitus"
+          }
+        }
+      },
+      "block_order": [
+        "collection_CcgfwL",
+        "collection_Af8wbN",
+        "collection_tyxwEG"
+      ],
+      "name": "Multi Collection Tabs",
+      "settings": {
+        "multi_tab_class": "fetured_collection_tabs",
+        "title": "Empfohlene Produkte",
+        "color_scheme": "scheme-fa8463ca-5fb0-4dbf-ae2d-3c479fe00ed5",
+        "show_view_all": true,
+        "text_view_all": "Alle Produkte ansehen"
+      }
+    },
+    "custom_liquid_icKfVw": {
+      "type": "custom-liquid",
+      "name": "Separator Line",
+      "settings": {
+        "custom_liquid": "<div class=\"home-devider page-width\">\n<hr style=\"margin-top:0;\">\n</div>",
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multi_collection_tabs_U9VJjh": {
+      "type": "multi-collection-tabs",
+      "blocks": {
+        "collection_Dt8nxz": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobilisation",
+            "tab_title": "Mobilisation"
+          }
+        },
+        "collection_bgAbpR": {
+          "type": "collection",
+          "settings": {
+            "collection": "adipositas",
+            "tab_title": "Adipositas"
+          }
+        },
+        "collection_LxTiUX": {
+          "type": "collection",
+          "settings": {
+            "collection": "dekubitus",
+            "tab_title": "Dekubitus"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Dt8nxz",
+        "collection_bgAbpR",
+        "collection_LxTiUX"
+      ],
+      "name": "Multi Collection Tabs",
+      "settings": {
+        "multi_tab_class": "fetured_collection_tabs",
+        "title": "Ersatzteil - Shop",
+        "color_scheme": "scheme-fa8463ca-5fb0-4dbf-ae2d-3c479fe00ed5",
+        "show_view_all": true,
+        "text_view_all": "Alle Produkte ansehen"
+      }
+    },
+    "custom_liquid_L3wdjQ": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"home-devider page-width\">\n<hr style=\"margin-top:0;\">\n</div>",
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "featured_collection_TVcxUk": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection-custom-class": "",
@@ -167,7 +278,12 @@
     "banner",
     "product-grid",
     "rich_text_E3PqfD",
+    "custom_liquid_8cdQCQ",
     "collection_list_pkthbJ",
+    "custom_liquid_qB8kLi",
+    "multi_collection_tabs_CpmbMc",
+    "custom_liquid_icKfVw",
+    "multi_collection_tabs_U9VJjh",
     "custom_liquid_L3wdjQ",
     "featured_collection_TVcxUk"
   ]

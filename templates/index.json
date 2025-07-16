@@ -1,1 +1,199 @@
-{"sections":{"rich_text_PhjLCt":{"type":"rich-text","blocks":{"heading_TC3VBV":{"type":"heading","settings":{"heading":"Das richtige System, zum richtigen Zeitpunkt, zur richtigen Indikation.","heading_size":"h0"}}},"block_order":["heading_TC3VBV"],"name":"t:sections.rich-text.presets.name","settings":{"custom-class":"","desktop_content_position":"left","content_alignment":"left","color_scheme":"scheme-6c9b7173-e02a-4dee-89c9-1805d30fea8e","full_width":true,"padding_top":40,"padding_bottom":80}},"collection_list_h4FxfH":{"type":"collection-list","blocks":{"featured_collection_trJrxD":{"type":"featured_collection","settings":{"collection":"rund-ums-bett"}},"featured_collection_qhgGaF":{"type":"featured_collection","settings":{"collection":"rund-ums-bad"}},"featured_collection_wQmGpj":{"type":"featured_collection","settings":{"collection":"rund-um-kinder-reha"}},"featured_collection_LxPQmb":{"type":"featured_collection","settings":{"collection":"rund-um-mobilitat"}},"featured_collection_CYr8q3":{"type":"featured_collection","settings":{"collection":"rund-um-den-alltag"}}},"block_order":["featured_collection_trJrxD","featured_collection_qhgGaF","featured_collection_wQmGpj","featured_collection_LxPQmb","featured_collection_CYr8q3"],"name":"t:sections.collection-list.presets.name","settings":{"title":"Produkt Kategorien","heading_size":"h1","image_ratio":"adapt","columns_desktop":4,"color_scheme":"scheme-dc0af555-7fd0-4f94-b45a-d5f19d36a439","show_view_all":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":80,"padding_bottom":80}},"custom_liquid_mLNntw":{"type":"custom-liquid","name":"t:sections.custom-liquid.presets.name","settings":{"custom_liquid":"<div class=\"home-devider page-width\">\n<hr>\n<\/div>","color_scheme":"scheme-3","padding_top":0,"padding_bottom":0}},"multi_collection_tabs_JrdVMX":{"type":"multi-collection-tabs","blocks":{"collection_fiKXkn":{"type":"collection","settings":{"collection":"wechseldrucksystem","tab_title":"Wechseldrucksystem"}},"collection_jFKExL":{"type":"collection","settings":{"collection":"adipositas","tab_title":"Adipositas"}},"collection_aLWxCk":{"type":"collection","settings":{"collection":"dekubitus","tab_title":"Dekubitus"}}},"block_order":["collection_fiKXkn","collection_jFKExL","collection_aLWxCk"],"name":"Multi Collection Tabs","settings":{"multi_tab_class":"fetured_collection_tabs","title":"Ersatzteil - Shop","color_scheme":"scheme-fa8463ca-5fb0-4dbf-ae2d-3c479fe00ed5","show_view_all":true,"text_view_all":"Alle Erstatzteile ansehen"}}},"order":["rich_text_PhjLCt","collection_list_h4FxfH","custom_liquid_mLNntw","multi_collection_tabs_JrdVMX"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_PhjLCt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TC3VBV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Das richtige System, zum richtigen Zeitpunkt, zur richtigen Indikation.",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TC3VBV"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "custom-class": "",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-6c9b7173-e02a-4dee-89c9-1805d30fea8e",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "collection_list_h4FxfH": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_trJrxD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-ums-bett"
+          }
+        },
+        "featured_collection_qhgGaF": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-ums-bad"
+          }
+        },
+        "featured_collection_wQmGpj": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-um-kinder-reha"
+          }
+        },
+        "featured_collection_LxPQmb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-um-mobilitat"
+          }
+        },
+        "featured_collection_CYr8q3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rund-um-den-alltag"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_trJrxD",
+        "featured_collection_qhgGaF",
+        "featured_collection_wQmGpj",
+        "featured_collection_LxPQmb",
+        "featured_collection_CYr8q3"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Produkt Kategorien",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-dc0af555-7fd0-4f94-b45a-d5f19d36a439",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_liquid_mLNntw": {
+      "type": "custom-liquid",
+      "name": "Separator Line",
+      "settings": {
+        "custom_liquid": "<div class=\"home-devider page-width\">\n<hr>\n</div>",
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multi_collection_tabs_JrdVMX": {
+      "type": "multi-collection-tabs",
+      "blocks": {
+        "collection_fiKXkn": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobilisation",
+            "tab_title": "Mobilisation"
+          }
+        },
+        "collection_jFKExL": {
+          "type": "collection",
+          "settings": {
+            "collection": "adipositas",
+            "tab_title": "Adipositas"
+          }
+        },
+        "collection_aLWxCk": {
+          "type": "collection",
+          "settings": {
+            "collection": "dekubitus",
+            "tab_title": "Dekubitus"
+          }
+        }
+      },
+      "block_order": [
+        "collection_fiKXkn",
+        "collection_jFKExL",
+        "collection_aLWxCk"
+      ],
+      "name": "Multi Collection Tabs",
+      "settings": {
+        "multi_tab_class": "fetured_collection_tabs",
+        "title": "Empfohlene Produkte",
+        "color_scheme": "scheme-fa8463ca-5fb0-4dbf-ae2d-3c479fe00ed5",
+        "show_view_all": true,
+        "text_view_all": "Alle Produkte ansehen"
+      }
+    },
+    "custom_liquid_rfeKMb": {
+      "type": "custom-liquid",
+      "name": "Separator Line",
+      "settings": {
+        "custom_liquid": "<div class=\"home-devider page-width\">\n<hr style=\"margin-top:0;\">\n</div>",
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multi_collection_tabs_xxjNRF": {
+      "type": "multi-collection-tabs",
+      "blocks": {
+        "collection_QBtkcW": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobilisation",
+            "tab_title": "Mobilisation"
+          }
+        },
+        "collection_G9YFTV": {
+          "type": "collection",
+          "settings": {
+            "collection": "adipositas",
+            "tab_title": "Adipositas"
+          }
+        },
+        "collection_nWyaH3": {
+          "type": "collection",
+          "settings": {
+            "collection": "dekubitus",
+            "tab_title": "Dekubitus"
+          }
+        }
+      },
+      "block_order": [
+        "collection_QBtkcW",
+        "collection_G9YFTV",
+        "collection_nWyaH3"
+      ],
+      "name": "Multi Collection Tabs",
+      "settings": {
+        "multi_tab_class": "fetured_collection_tabs",
+        "title": "Ersatzteil - Shop",
+        "color_scheme": "scheme-fa8463ca-5fb0-4dbf-ae2d-3c479fe00ed5",
+        "show_view_all": true,
+        "text_view_all": "Alle Produkte ansehen"
+      }
+    }
+  },
+  "order": [
+    "rich_text_PhjLCt",
+    "collection_list_h4FxfH",
+    "custom_liquid_mLNntw",
+    "multi_collection_tabs_JrdVMX",
+    "custom_liquid_rfeKMb",
+    "multi_collection_tabs_xxjNRF"
+  ]
+}

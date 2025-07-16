@@ -61,7 +61,7 @@
         "content_alignment": "left",
         "color_scheme": "scheme-3",
         "full_width": true,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 80
       }
     },
@@ -130,9 +130,9 @@
         "padding_bottom": 80
       }
     },
-    "custom_liquid_Mx7AVP": {
+    "custom_liquid_4zUzYf": {
       "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+      "name": "Separator Line",
       "settings": {
         "custom_liquid": "<div class=\"home-devider page-width\">\n<hr>\n</div>",
         "color_scheme": "scheme-3",
@@ -140,8 +140,108 @@
         "padding_bottom": 0
       }
     },
+    "multi_collection_tabs_FEfKej": {
+      "type": "multi-collection-tabs",
+      "blocks": {
+        "collection_ttjd3t": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobilisation",
+            "tab_title": "Mobilisation"
+          }
+        },
+        "collection_gfXbLj": {
+          "type": "collection",
+          "settings": {
+            "collection": "adipositas",
+            "tab_title": "Adipositas"
+          }
+        },
+        "collection_cxNHfa": {
+          "type": "collection",
+          "settings": {
+            "collection": "dekubitus",
+            "tab_title": "Dekubitus"
+          }
+        }
+      },
+      "block_order": [
+        "collection_ttjd3t",
+        "collection_gfXbLj",
+        "collection_cxNHfa"
+      ],
+      "name": "Multi Collection Tabs",
+      "settings": {
+        "multi_tab_class": "fetured_collection_tabs",
+        "title": "Empfohlene Produkte",
+        "color_scheme": "scheme-fa8463ca-5fb0-4dbf-ae2d-3c479fe00ed5",
+        "show_view_all": true,
+        "text_view_all": "Alle Produkte ansehen"
+      }
+    },
+    "custom_liquid_tB94eU": {
+      "type": "custom-liquid",
+      "name": "Separator Line",
+      "settings": {
+        "custom_liquid": "<div class=\"home-devider page-width\">\n<hr style=\"margin-top:0;\">\n</div>",
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multi_collection_tabs_bjhDVj": {
+      "type": "multi-collection-tabs",
+      "blocks": {
+        "collection_PzK6Ut": {
+          "type": "collection",
+          "settings": {
+            "collection": "mobilisation",
+            "tab_title": "Mobilisation"
+          }
+        },
+        "collection_eTYWzX": {
+          "type": "collection",
+          "settings": {
+            "collection": "adipositas",
+            "tab_title": "Adipositas"
+          }
+        },
+        "collection_NKmnLg": {
+          "type": "collection",
+          "settings": {
+            "collection": "dekubitus",
+            "tab_title": "Dekubitus"
+          }
+        }
+      },
+      "block_order": [
+        "collection_PzK6Ut",
+        "collection_eTYWzX",
+        "collection_NKmnLg"
+      ],
+      "name": "Multi Collection Tabs",
+      "settings": {
+        "multi_tab_class": "fetured_collection_tabs",
+        "title": "Ersatzteil - Shop",
+        "color_scheme": "scheme-fa8463ca-5fb0-4dbf-ae2d-3c479fe00ed5",
+        "show_view_all": true,
+        "text_view_all": "Alle Produkte ansehen"
+      }
+    },
+    "custom_liquid_Mx7AVP": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"home-devider page-width\">\n<hr style=\"margin-top:0;\">\n</div>",
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "featured_collection_JrCzMT": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection-custom-class": "",
@@ -176,6 +276,10 @@
     "product-grid",
     "rich_text_E3PqfD",
     "collection_list_pkthbJ",
+    "custom_liquid_4zUzYf",
+    "multi_collection_tabs_FEfKej",
+    "custom_liquid_tB94eU",
+    "multi_collection_tabs_bjhDVj",
     "custom_liquid_Mx7AVP",
     "featured_collection_JrCzMT"
   ]

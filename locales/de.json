@@ -312,6 +312,7 @@
       "duties_and_taxes_included_shipping_at_checkout_without_policy": "Inkl. Zollgebühren und Steuern. Rabatte und Versand werden beim Checkout berechnet.",
       "taxes_included_shipping_at_checkout_with_policy_html": "Inkl. Steuern. Rabatte und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet.",
       "taxes_included_shipping_at_checkout_without_policy": "Inkl. MwSt. Rabatte und Versand werden beim Checkout berechnet.",
+      "taxes_included_shipping_at_checkout_without_policy_b2b": "Exkl. MwSt. Rabatte und Versand werden beim Checkout berechnet.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Inkl. Zollgebühren. Steuern, Rabatte und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Inkl. Zollgebühren. Steuern, Rabatte und Versand werden beim Checkout berechnet.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Steuern, Rabatte und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet.",
@@ -468,9 +469,9 @@
       "title": "Account erstellen",
       "first_name": "Vorname",
       "last_name": "Nachname",
-      "b2b_checkbox":"Sind Sie ein B2B-Kunde?",
-      "company_name":"Geschäftsnahme",
-      "phone_number":"Telefonnummer",
+      "b2b_checkbox": "Sind Sie ein Firmenkunde?",
+      "company_name": "Firmenname",
+      "phone_number": "Telefonnummer",
       "email": "E-Mail",
       "password": "Passwort",
       "submit": "Account erstellen"
@@ -559,6 +560,9 @@
       },
       "merchandise_unavailable_in_buyer_location": {
         "cart_updated": "Ihr Einkaufswagen wurde aktualisiert"
+      },
+      "order_summary": {
+        "custom_discount": "Firmenkundenrabatt"
       }
     },
     "page_titles": {

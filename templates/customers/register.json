@@ -16,14 +16,14 @@
           "type": "info_box",
           "settings": {
             "heading": "Account Info",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit uma. Pellentesque sit amet sapien fringita, muttis ligula consectetur, ultrices mauris, Maecenas vitae matty tellus. Nutam quis imperdiet augue. Vestibulum auctor</p>"
+            "content": "<p>Erstellen Sie ein Kundenkonto, um schneller und einfacher einzukaufen. Sie können Bestellungen verfolgen, frühere Käufe einsehen und Ihre Daten bequem verwalten.</p>"
           }
         },
         "info_box_DCncAz": {
           "type": "info_box",
           "settings": {
             "heading": "Discount Info",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit uma. Pellentesque sit amet sapien fringita, muttis ligula consectetur, ultrices mauris, Maecenas vitae matty tellus. Nutam quis imperdiet augue. Vestibulum auctor</p>"
+            "content": "<p>Wenn Sie sich als Firma registrieren, kontaktieren wir Sie innerhalb der nächsten 2–3 Tage persönlich. Sie erhalten einen individuellen Geschäftskundenrabatt und profitieren von exklusiven Konditionen.</p>"
           }
         }
       },
@@ -33,7 +33,7 @@
       ],
       "settings": {
         "login_link": "Schon einen Account erstellt? <a href=\"/account/login\" title=\"/account/login\">Login</a>",
-        "padding_top": 60,
+        "padding_top": 20,
         "padding_bottom": 100
       }
     }
